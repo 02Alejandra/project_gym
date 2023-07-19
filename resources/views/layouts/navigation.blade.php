@@ -151,7 +151,8 @@
                                         {{ __('Membresía') }}
                                     </x-nav-link>
                                 </div>
-                            </li>                        
+                            </li>             
+
                         </ul>
                     </li>
                 </div>

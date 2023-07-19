@@ -197,5 +197,16 @@ class PaymentController extends Controller
     {
         return view('payments.create', ['subscriptionId' => $subscriptionId]);
     }
+
+    public function getInvoiceDetails($id) {
+        echo $id;
+        $payment = $this->paymentRepository->find($id);
+        $payment->load('subscription');
+        // var_dump($payment);
+        return view('payments.masterDetail', ['payment' => $payment]);
+    }
+    
+
+
     
 }
