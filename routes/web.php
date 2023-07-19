@@ -58,6 +58,8 @@ Route::get('payment_subscriptions/{subscriptionId}', 'App\Http\Controllers\Payme
 
 Route::get('payment_subscriptions_create/{subscriptionId}', 'App\Http\Controllers\PaymentController@createPaymentBySubscriptionId')->name('payments.subscription.create');
 
+Route::get('get_invoice_details/{id}', 'App\Http\Controllers\PaymentController@getInvoiceDetails')->name('masterDetail.payments');
+
 Route::resource('inventories', App\Http\Controllers\InventoryController::class);
 
 Route::resource('audit_trail', \App\Http\Controllers\audit_trail\AuditTrailController::class)->middleware('auth');
@@ -69,3 +71,6 @@ Route::get('audit_trail_user_actions', [\App\Http\Controllers\audit_trail\AuditS
 Route::resource('healthCards', App\Http\Controllers\HealthCardController::class);
 
 require __DIR__.'/auth.php';
+
+
+
